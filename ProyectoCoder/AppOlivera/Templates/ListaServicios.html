@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+<h1> Lista Total de Servicios Contratados </h1>
+<p>Sección en preparación!</p>
+
+    <ul>
+        {% for servicio in servicios %}
+            <li> {{servicio}} </li>    
+        {% endfor %}
+    </ul>
+{% endblock contenidoQueCambia %}
+
+
+
