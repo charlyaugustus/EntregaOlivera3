@@ -96,6 +96,7 @@ def BuscarCli(req: HttpRequest):
         nombre = req.GET["nombre"]
         nombre = Cliente.objects.get(nombre=nombre)
         return render(req, "ResultadoBusquedaClientes.html",{"nombre": nombre})
+    
     else:
         return HttpResponse(f"No hay clientes con ese nombre")
 
