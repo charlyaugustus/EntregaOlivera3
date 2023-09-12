@@ -1,7 +1,7 @@
 from django.http import HttpResponse,HttpRequest
 from django.shortcuts import render
-from .models import Tipo_Servicio, Cliente, Trabajos_entregar, Lugar_Evento
-from .forms import ServicioFormulario
+from .models import *
+from .forms import *
 
 # Create your views here.
 def tipo_ser(req, nombre, evento, email):
@@ -100,5 +100,64 @@ def BuscarCli(req: HttpRequest):
         return HttpResponse(f"No hay clientes con ese nombre")
 
     
+def clienteFormulario(req):
+    print('method', req.method)
+    print('POST',  req.POST)
+    
+    if req.method == 'POST':
         
+        clienteFormulario = ClienteFormulario(req.POST)
+    
+        if clienteFormulario.is_valid():
+            
+            data = clienteFormulario.cleaned_data
+            nombre = Cliente(nombre = data["nombre"], apellido = data["apellido"], email = data["email"])
+            nombre.save()
+            
+            return render(req, "inicio.html")
         
+    else:
+        clienteFormulario = ClienteFormulario()
+        return render(req, "ClienteFormulario.html",{"clienteFormulario": clienteFormulario})
+
+
+def lugarFormulario(req):
+    print('method', req.method)
+    print('POST',  req.POST)
+    
+    if req.method == 'POST':
+        
+        lugarFormulario = LugarFormulario(req.POST)
+    
+        if lugarFormulario.is_valid():
+            
+            data = lugarFormulario.cleaned_data
+            nombre = Lugar_Evento(nombre = data["nombre"], localidad = data["localidad"], email = data["email"], salon = data["salon"])
+            nombre.save()
+            
+            return render(req, "inicio.html")
+        
+    else:
+        lugarFormulario = LugarFormulario()
+        return render(req, "LugarFormulario.html",{"lugarFormulario": lugarFormulario})
+
+def trabajoFormulario(req):
+    print('method', req.method)
+    print('POST',  req.POST)
+    
+    if req.method == 'POST':
+        
+        trabajoFormulario = TrabajoFormulario(req.POST)
+    
+        if trabajoFormulario.is_valid():
+            
+            data = trabajoFormulario.cleaned_data
+            nombre = Trabajos_entregar(nombre = data["nombre"], fecha_entrega = data["fecha_entrega"], entregado = data["entregado"], link = data["link"])
+            nombre.save()
+            
+            return render(req, "inicio.html")
+        
+    else:
+        trabajoFormulario = TrabajoFormulario()
+        return render(req, "TrabajoFormulario.html",{"trabajoFormulario": trabajoFormulario})
+

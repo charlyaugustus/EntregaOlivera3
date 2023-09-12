@@ -33,7 +33,8 @@ class Trabajos_entregar(models.Model):
     fecha_entrega = models.DateField()
     entregado = models.BooleanField()
     link = models.CharField(max_length=256, null=True)
-    trabajo_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    
+   
     
     
     def __str__(self) -> str:

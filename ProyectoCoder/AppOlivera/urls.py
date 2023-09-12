@@ -15,6 +15,12 @@ urlpatterns = [
     path("listatrabajos/", ListaTrabajos, name="ListaTrabajos"),
     path("busqueda-clientes/", BuscarClientes, name="BusquedaClientes"),
     path("busquedando-cli/", BuscarCli, name="BusquedandoClientes"),
+    path("cliente-formulario/", clienteFormulario, name="ClienteFormulario"),
+    path("lugar-formulario/", lugarFormulario, name="LugarFormulario"),
+    path("trabajo-formulario/", trabajoFormulario, name="TrabajoFormulario"),
+
+   
+    
     
     
    
