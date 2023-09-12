@@ -5,14 +5,16 @@ class Tipo_Servicio(models.Model):
 
     nombre = models.CharField(max_length=40)
     evento = models.CharField(max_length=40)
+    email  = models.EmailField()
+    tipo_servicio = models.EmailField()
     
     def __str__(self) -> str:
-        return f'{self.nombre} - {self.evento}'
+        return f'{self.nombre} - {self.evento} - {self.email}  - {self.tipo_servicio}'
 
 class Cliente(models.Model):
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
-    email = models.EmailField()
+    email= models.EmailField()
     
     def __str__(self) -> str:
         return f'{self.nombre} - {self.apellido} - {self.email}'
@@ -31,6 +33,8 @@ class Trabajos_entregar(models.Model):
     fecha_entrega = models.DateField()
     entregado = models.BooleanField()
     link = models.CharField(max_length=256, null=True)
+    trabajo_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    
     
     def __str__(self) -> str:
         return f'{self.nombre} - {self.fecha_entrega} - {self.entregado} - {self.link}'

@@ -11,7 +11,10 @@ urlpatterns = [
     path("busqueda-servicio/", busquedaEvento, name="BusquedaEvento"),
     path("listaclientes/", ListaClientes, name="ListaClientes"),
     path("buscar/", buscar, name="Buscar"),
-    path("listalugares/", ListaLugares, name="ListaLugares")
+    path("listalugares/", ListaLugares, name="ListaLugares"),
+    path("listatrabajos/", ListaTrabajos, name="ListaTrabajos"),
+    path("busqueda-clientes/", BuscarClientes, name="BusquedaClientes"),
+    path("busquedando-cli/", BuscarCli, name="BusquedandoClientes"),
     
     
    

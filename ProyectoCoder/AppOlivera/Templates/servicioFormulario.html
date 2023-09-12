@@ -2,7 +2,15 @@
 
 {% block contenidoQueCambia %}
        
+<h1> Tipos de servicios que ofrecemos: </h1>
+    <p> "Fotografía"<Br>
+        "Video"<Br>
+        "Video y Fotografia"
+        
+    </p>
+
 <form action="{% url 'ServicioFormulario' %}"method="post">{% csrf_token %}
+
 
    {{miFormulario.as_p}}
 

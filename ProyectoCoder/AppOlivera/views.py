@@ -4,13 +4,13 @@ from .models import Tipo_Servicio, Cliente, Trabajos_entregar, Lugar_Evento
 from .forms import ServicioFormulario
 
 # Create your views here.
-def tipo_ser(req, nombre, evento):
-    nombre = Tipo_Servicio(nombre = nombre, evento = evento)
+def tipo_ser(req, nombre, evento, email):
+    nombre = Tipo_Servicio(nombre = nombre, evento = evento, email = email)
     nombre.save()
     
     return HttpResponse(f"""
     
-    <p>Tipo de Servicio: {nombre.nombre} - Evento: {nombre.evento} creado con éxito!</p>
+    <p>Tipo de Servicio: {nombre.nombre} - Evento: {nombre.evento}  - Email: {nombre.email} creado con éxito!</p>
     
     """)
     
@@ -49,7 +49,7 @@ def servicioFormulario(req):
         if miFormulario.is_valid():
             
             data = miFormulario.cleaned_data
-            nombre = Tipo_Servicio(nombre = data["nombre"], evento = data["evento"])
+            nombre = Tipo_Servicio(nombre = data["nombre"], evento = data["evento"], email = data["email"], tipo_servicio = data["tipo_servicio"])
             nombre.save()
             
             return render(req, "inicio.html")
@@ -80,9 +80,24 @@ def ListaLugares(req):
     lugares = Lugar_Evento.objects.all()
     return render(req, "ListaLugares.html", {"lugares": lugares})
 
+def ListaTrabajos(req):
+        
+    trabajos = Trabajos_entregar.objects.all()
+    return render(req, "ListaTrabajos.html", {"trabajos": trabajos})
 
 
+def BuscarClientes(req):
+    
+    return render(req, "BusquedaClientes.html")
 
+def BuscarCli(req: HttpRequest):
+    
+    if req.GET["nombre"]:
+        nombre = req.GET["nombre"]
+        nombre = Cliente.objects.get(nombre=nombre)
+        return render(req, "ResultadoBusquedaClientes.html",{"nombre": nombre})
+    else:
+        return HttpResponse(f"No hay clientes con ese nombre")
 
     
         
