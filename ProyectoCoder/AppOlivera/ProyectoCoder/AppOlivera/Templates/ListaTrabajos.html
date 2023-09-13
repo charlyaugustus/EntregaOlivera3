@@ -1,0 +1,13 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+    
+<h1> Trabajos </h1>
+    <p> "Trabajos entregados/a entregar" </p>
+
+    <ul>
+        {% for trabajo in trabajos %}
+            <li> {{trabajo}} </li>    
+        {% endfor %}
+    </ul>
+{% endblock contenidoQueCambia %}

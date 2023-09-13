@@ -1,0 +1,13 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+       
+    <p>Resultados de la búsqueda de Clientes:</p>
+
+    {% if nombre %}
+        {{ nombre }}
+    {% else %}
+        <p>No existe</p>
+    {% endif %}
+
+{% endblock contenidoQueCambia %}

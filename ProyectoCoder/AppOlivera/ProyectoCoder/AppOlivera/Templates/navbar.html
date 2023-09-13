@@ -1,0 +1,32 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ListaServicios' %}">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ListaClientes' %}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ListaLugares' %}">Lugar del Evento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ListaTrabajos' %}">Trabajos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ServicioFormulario' %}">Formulario Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'BusquedaClientes' %}">Busqueda de Clientes</a>
+                </li>
+            </ul>
+        </div>
+        <a class="btn btn-primary" href="{% url 'Inicio' %}">Inicio</a>
+    </div>
+</nav>

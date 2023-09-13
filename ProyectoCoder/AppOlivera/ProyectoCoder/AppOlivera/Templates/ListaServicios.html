@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+<h1> Lista Total de Servicios Confirmados/a Confirmar </h1>
+
+
+    <ul>
+        {% for servicio in servicios %}
+            <li> {{servicio}} </li>    
+        {% endfor %}
+    </ul>
+{% endblock contenidoQueCambia %}
+
+
+
