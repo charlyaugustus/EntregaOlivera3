@@ -1,3 +1,6 @@
+
+
+#
 El proyecto se orienta a una página en la que una empresa pueda gestionar los servicios que ofrece. Organizar su agenda de trabajo recibiendo pedidos de contacto a travesde un formulario de contacto en el que pueda dejar datos los futuros clientes.
 
 
@@ -15,5 +18,5 @@ Lugar del Evento: acá los clientes que contrataron el servicio y lugar del even
 Trabajos: "Trabajos entregados/a entregar"
 Formulario Contacto: acá los clientes pueden dejar sus datos
 Búsqueda Clientes: dejando un nombre nos devuelve los nombres de los clientes- (sigo buscando solución de cuando no encuentre un clientes no devuela  error)
-Hasta acá creo haber cumplido la consigna y me falta muchas mejoras visuales, ordenar código, etc para poder llegar bien a la entrega final. 
+Hasta acá creo haber cumplido la consigna y me falta muchas mejoras visuales, ordenar código, etc para poder llegar bien a la entrega final.
 
